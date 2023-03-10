@@ -24,6 +24,7 @@
 </p>
 
 
+<img src="demo.png">
 
 
 Made with :heart: by <a href="https://github.com/tmchuynh" target="_blank">Tina Huynh</a>
