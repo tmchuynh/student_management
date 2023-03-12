@@ -22,7 +22,7 @@ connector.execute(
 
 
 def reset_fields():
-    global name_strvar, gender_strvar, dob
+    # global name_strvar, gender_strvar, dob
 
     for i in ['name_strvar', 'gender_strvar']:
         exec(f"{i}.set('')")
@@ -30,9 +30,11 @@ def reset_fields():
 
 
 def reset_form():
-    global tree
-    tree.delete(*tree.get_children())
-
+    connector.execute('DELETE FROM SCHOOL_MANAGEMENT')
+    connector.commit()
+    
+    display_records()
+    
     reset_fields()
 
 
@@ -48,6 +50,7 @@ def display_records():
 
 def add_record():
     global name_strvar, gender_strvar, dob
+    global tree
 
     name = name_strvar.get()
     gender = gender_strvar.get()
